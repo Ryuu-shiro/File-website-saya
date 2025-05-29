@@ -1,11 +1,11 @@
-body {
+  body {
   font-family: 'Roboto Serif', serif;
   color: white;
   background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -76,18 +76,6 @@ h1, h2 {
   background: #555;
 }
 
-.holmes {
-  margin: 40px auto;
-  max-width: 600px;
-  text-align: center;
-}
-
-.holmes img {
-  max-width: 200px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
 .novel {
   margin: 40px auto;
   text-align: center;
@@ -99,15 +87,20 @@ h1, h2 {
   box-shadow: 0 0 20px black;
 }
 
-#disqus-container {
-  max-width: 600px;
+.instagram {
+  margin: 30px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.ig-link {
+  margin-left: 10px;
+  font-size: 1.3em;
+}
+
+.holmes {
   margin: 40px auto;
-  transform: scale(0.85);
-  transform-origin: top center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px black;
+  text-align: center;
 }
 
 .holmes-wrapper {
@@ -115,41 +108,29 @@ h1, h2 {
   display: inline-block;
 }
 
-.holmes-wrapper img {
-  display: block;
-  max-width: 400px;
+.holmes img {
+  max-width: 350px;
   border-radius: 50%;
+  box-shadow: 0 0 20px black;
 }
 
-.holmes-quote {
+.holmes-quote-overlay {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
-  width: 100%;
   transform: translate(-50%, -50%);
   color: white;
-  text-shadow: 2px 2px 6px black;
+  text-shadow: 2px 2px 8px black;
   text-align: center;
-  font-size: 14px;
-  padding: 0 10px;
+  width: 90%;
+  pointer-events: none; /* Biar klik tetap ke bawah */
 }
 
-.holmes-quote strong {
-  display: block;
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.ig-link {
-  display: inline-block;
-  margin-left: 10px; /* Geser ke kanan 10px, bisa disesuaikan */
-  font-size: 1.5em;
-  color: white;
-  text-decoration: none;
-}
-
-.ig-link:hover {
-  text-decoration: underline;
-  color: #ddd;
+#disqus-container {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  text-align: center;
 }
