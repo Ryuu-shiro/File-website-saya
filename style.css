@@ -98,3 +98,58 @@ h1, h2 {
   border-radius: 20px;
   box-shadow: 0 0 20px black;
 }
+
+#disqus-container {
+  max-width: 600px;
+  margin: 40px auto;
+  transform: scale(0.85);
+  transform-origin: top center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+}
+
+.holmes-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.holmes-wrapper img {
+  display: block;
+  max-width: 400px;
+  border-radius: 50%;
+}
+
+.holmes-quote {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  text-align: center;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.holmes-quote strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ig-link {
+  display: inline-block;
+  margin-left: 10px; /* Geser ke kanan 10px, bisa disesuaikan */
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.ig-link:hover {
+  text-decoration: underline;
+  color: #ddd;
+}
