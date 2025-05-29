@@ -1,28 +1,58 @@
-body { font-family: 'Roboto Serif', serif; color: white; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg') no-repeat center center fixed; background-size: cover; overflow-x: hidden; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+}
 
-.overlay { min-height: 100vh; width: 100%; padding: 60px 20px; text-align: center; position: relative; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-h1, h2 { font-family: 'Playfair Display', serif; text-shadow: 2px 2px 10px black; }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-.profile { font-size: 1.5em; line-height: 2em; max-width: 600px; margin: 20px auto; background: rgba(0, 0, 0, 0.4); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px black; }
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-.music-control { margin: 30px 0; }
+.profile img {
+  width: 100%;
+  max-width: 400px; /* Diperbesar dari 300px ke 400px */
+  border-radius: 10px;
+}
 
-#toggleMusic { padding: 10px 20px; font-size: 1em; border: none; background: #444; color: white; border-radius: 10px; cursor: pointer; }
+.profile-info {
+  text-align: center;
+}
 
-.album { position: absolute; top: 200px; right: 20px; width: 300px; background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; box-shadow: 0 0 15px black; }
+.profile-info a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #E1306C;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
 
-.album-list { max-height: 200px; overflow-y: auto; margin: 10px 0; padding: 10px; background: rgba(0, 0, 0, 0.3); border-radius: 10px; }
+.profile-info a:hover {
+  background-color: #c72c60;
+}
 
-.track { padding: 10px; margin-bottom: 5px; background: #333; border-radius: 8px; cursor: pointer; }
+@media (min-width: 600px) {
+  .profile {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
 
-.track:hover { background: #555; }
-
-.holmes { position: absolute; bottom: 20px; left: 20px; text-align: left; color: white; max-width: 300px; font-style: italic; text-shadow: 2px 2px 6px black; }
-
-.holmes img { max-width: 200px; border-radius: 50%; margin-top: 10px; }
-
-.novel { position: absolute; bottom: 20px; right: 20px; text-align: right; }
-
-.novel img { max-width: 200px; border-radius: 20px; box-shadow: 0 0 20px black; }
-
+  .profile-info {
+    flex: 1;
+  }
+}
