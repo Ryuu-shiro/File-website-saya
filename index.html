@@ -21,7 +21,7 @@
 
     <!-- Music Control -->
     <div class="music-control">
-      <button id="toggleMusic"> Play / Pause</button>
+      <button id="toggleMusic"> TEKAN UNTUK SUASANA</button>
       <audio id="backgroundMusic" loop>
         <source src="music.mp3" type="audio/mpeg">
       </audio>
@@ -48,16 +48,21 @@
   </div>
 
 <!-- My Instagram -->
-<div class:"Instagram">
- <h2>INSTAGRAM:</h2>
-<a href="https://www.instagram.com/ryuu_shiro0?igsh=MWpnN29taXAzZm14bA==" target="_blank">ティオ</a>
+<!-- My Instagram -->
+<div class="instagram">
+	<h2>INSTAGRAM:</h2>
+	<a href="https://www.instagram.com/ryuu_shiro0?igsh=MWpnN29taXAzZm14bA==" target="_blank" class="ig-link">ティオ</a>
 </div>
-</div>
+
     <!-- Sherlock Holmes Section -->
     <div class="holmes">
-      <img src="sherlock.png" alt="Sherlock Holmes">
-      <p>"When you have eliminated the impossible, whatever remains, however improbable, must be the truth."</p>"SHERLOCK HOLMES"
-    </div>
+	<div class="holmes-wrapper">
+		<img src="sherlock.png" alt="Sherlock Holmes">
+		<div class="holmes-quote">
+			<p>"When you have eliminated the impossible,<br>whatever remains, however improbable,<br>must be the truth."</p>
+			<strong> ~SHERLOCK HOLMES~</strong>
+		</div>
+	</div>
 
   <script>
     // Music Control Button
@@ -83,3 +88,27 @@
   </script>
 </body>
 </html>
+
+<!-- DISQUS COMMENT SECTION -->
+<div id="disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = window.location.pathname;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-ryuu-shiro-github-io-ryuu-shiro-web.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the 
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
