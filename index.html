@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -21,7 +21,7 @@
 
     <!-- Music Control -->
     <div class="music-control">
-      <button id="toggleMusic"> TEKAN UNTUK SUASANA</button>
+      <button id="toggleMusic">TEKAN UNTUK SUASANA</button>
       <audio id="backgroundMusic" loop>
         <source src="music.mp3" type="audio/mpeg">
       </audio>
@@ -29,7 +29,7 @@
 
     <!-- My Album -->
     <div class="album">
-      <h2> My Album</h2>
+      <h2>My Album</h2>
       <div class="album-list" id="albumList">
         <div class="track" data-src="Afgan - Wajahmu Mengalihkan Duniaku.mp3">Afgan - Wajahmu Mengalihkan Duniaku</div>
         <div class="track" data-src="Avenged Sevenfold - So Far Away.mp3">Avenged Sevenfold - So Far Away</div>
@@ -40,75 +40,58 @@
       <audio id="albumPlayer" controls></audio>
     </div>
 
- <!-- My Novel -->
+    <!-- My Novel -->
     <div class="novel">
       <h2>My Favorite Novel</h2>
       <img src="novel.jpg" alt="My Novel">
     </div>
-  </div>
 
-<!-- My Instagram -->
-<!-- My Instagram -->
+    <!-- Instagram -->
 <div class="instagram">
-	<h2>INSTAGRAM:</h2>
-	<a href="https://www.instagram.com/ryuu_shiro0?igsh=MWpnN29taXAzZm14bA==" target="_blank" class="ig-link">ティオ</a>
+	<h2>INSTAGRAM: <a href="https://www.instagram.com/ryuu_shiro0?igsh=MWpnN29taXAzZm14bA==" target="_blank" class="ig-link"<h2>👉🏻ティオ👈🏻</a></h2>
 </div>
 
-    <!-- Sherlock Holmes Section -->
-    <div class="holmes">
+<!-- Sherlock Holmes -->
+<div class="holmes">
 	<div class="holmes-wrapper">
 		<img src="sherlock.png" alt="Sherlock Holmes">
-		<div class="holmes-quote">
+		<div class="holmes-quote-overlay">
 			<p>"When you have eliminated the impossible,<br>whatever remains, however improbable,<br>must be the truth."</p>
-			<strong> ~SHERLOCK HOLMES~</strong>
+			<strong>~ SHERLOCK HOLMES</strong>
 		</div>
 	</div>
+</div>
+  
 
+    <!-- Disqus Section -->
+    <div id="disqus-container">
+      <div id="disqus_thread"></div>
+    </div>
+
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <!-- Disqus Script -->
   <script>
-    // Music Control Button
-    const bgMusic = document.getElementById('backgroundMusic');
-    const toggleBtn = document.getElementById('toggleMusic');
-    toggleBtn.addEventListener('click', () => {
-      if (bgMusic.paused) {
-        bgMusic.play();
-      } else {
-        bgMusic.pause();
-      }
-    });
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname;
+    };
 
-    // Album Player
-    const albumPlayer = document.getElementById('albumPlayer');
-    const tracks = document.querySelectorAll('.track');
-    tracks.forEach(track => {
-      track.addEventListener('click', () => {
-        albumPlayer.src = track.getAttribute('data-src');
-        albumPlayer.play();
-      });
-    });
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-ryuu-shiro-github-io-ryuu-shiro-web.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   </script>
+
+  <noscript>
+    Please enable JavaScript to view the 
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+
 </body>
 </html>
-
-<!-- DISQUS COMMENT SECTION -->
-<div id="disqus-container">
-  <div id="disqus_thread"></div>
-</div>
-
-<script>
-  var disqus_config = function () {
-    this.page.url = window.location.href;
-    this.page.identifier = window.location.pathname;
-  };
-
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://https-ryuu-shiro-github-io-ryuu-shiro-web.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
-
-<noscript>
-  Please enable JavaScript to view the 
-  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
