@@ -1,95 +1,79 @@
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to My Website</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto+Serif:opsz,wght@8..144,400&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto Serif', serif;
-      color: white;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      overflow-x: hidden;
-    }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      min-height: 100vh;
-      width: 100%;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 10px black;
-    }
-
-    .profile {
-      font-size: 1.5em;
-      line-height: 2em;
-      max-width: 600px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px black;
-    }
-
-   <audio id="bgm" autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<script>
-  const bgm = document.getElementById('bgm');
-
-  // Try to play immediately
-  bgm.play().catch(() => {
-    // If autoplay is blocked, wait for user interaction
-    document.addEventListener('click', () => {
-      bgm.play();
-    }, { once: true });
-  });
-</script>
-    
-  // Wait for user interaction (like a click)
-  document.addEventListener('click', function() {
-    const audio = document.getElementById('bgm');
-    audio.muted = false;
-    audio.play();
-  }, { once: true });
-</script> 
-    
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="overlay">
     <h1>WELCOME TO MY WEBSITE</h1>
+
+    <!-- My Profile -->
     <div class="profile">
       <p><strong>MY PROFILE:</strong></p>
       <p>NAME: R.T</p>
       <p>GENDER: MALE</p>
-      <p>AGE: 21</p>
-      <p>HOBBY: 🎸 🎹 🎼</p>
+      <p>AGE: 12</p>
+      <p>HOBBY: ðŸŽ¸ ðŸŽ¹ ðŸŽ¼</p>
+    </div>
+
+    <!-- Music Control -->
+    <div class="music-control">
+      <button id="toggleMusic">ðŸ”Š Play / Pause</button>
+      <audio id="backgroundMusic" loop>
+        <source src="Afgan - Wajahmu Mengalihkan Duniaku.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- My Album -->
+    <div class="album">
+      <h2>ðŸŽµ My Album</h2>
+      <div class="album-list" id="albumList">
+        <div class="track" data-src="Afgan - Wajahmu Mengalihkan Duniaku.mp3">Afgan - Wajahmu Mengalihkan Duniaku</div>
+        <div class="track" data-src="Avenged Sevenfold - So Far Away.mp3">Avenged Sevenfold - So Far Away</div>
+        <div class="track" data-src="HIVI! - Siapkah Kau 'Tuk Jatuh Cinta Lagi.mp3">HIVI! - Siapkah Kau 'Tuk Jatuh Cinta Lagi</div>
+        <div class="track" data-src="Kahitna - Lebih Dari Sekedar Cantik.mp3">Kahitna - Lebih Dari Sekedar Cantik</div>
+        <div class="track" data-src="Simple Plan - Perfect.mp3">Simple Plan - Perfect</div>
+      </div>
+      <audio id="albumPlayer" controls></audio>
+    </div>
+
+    <!-- Sherlock Holmes Section -->
+    <div class="holmes">
+      <img src="sherlock.png" alt="Sherlock Holmes">
+      <p>â€œWhen you have eliminated the impossible, whatever remains, however improbable, must be the truth.â€</p>
+    </div>
+
+    <!-- My Novel -->
+    <div class="novel">
+      <h2>ðŸ“š My Novel</h2>
+      <img src="novel.jpg" alt="My Novel">
     </div>
   </div>
 
-  <audio controls autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <script>
+    // Music Control Button
+    const bgMusic = document.getElementById('backgroundMusic');
+    const toggleBtn = document.getElementById('toggleMusic');
+    toggleBtn.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+      } else {
+        bgMusic.pause();
+      }
+    });
+
+    // Album Player
+    const albumPlayer = document.getElementById('albumPlayer');
+    const tracks = document.querySelectorAll('.track');
+    tracks.forEach(track => {
+      track.addEventListener('click', () => {
+        albumPlayer.src = track.getAttribute('data-src');
+        albumPlayer.play();
+      });
+    });
+  </script>
 </body>
 </html>
