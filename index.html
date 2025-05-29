@@ -48,12 +48,23 @@
       box-shadow: 0 0 20px black;
     }
 
-   <audio id="bgm" autoplay loop muted>
+   <audio id="bgm" autoplay loop>
   <source src="music.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
+  const bgm = document.getElementById('bgm');
+
+  // Try to play immediately
+  bgm.play().catch(() => {
+    // If autoplay is blocked, wait for user interaction
+    document.addEventListener('click', () => {
+      bgm.play();
+    }, { once: true });
+  });
+</script>
+    
   // Wait for user interaction (like a click)
   document.addEventListener('click', function() {
     const audio = document.getElementById('bgm');
