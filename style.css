@@ -142,3 +142,13 @@ h1, h2 {
   color: white;
   text-decoration: none;
 }
+
+#snowCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
