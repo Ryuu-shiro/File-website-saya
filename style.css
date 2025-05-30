@@ -135,14 +135,6 @@ h1, h2 {
   text-align: center;
 }
 
-.ig-link {
-  display: inline-block;
-  margin-top: 5px; /* tambahin jarak dikit */
-  font-size: 1.2em;
-  color: white;
-  text-decoration: none;
-}
-
 #snowCanvas {
   position: fixed;
   top: 0;
