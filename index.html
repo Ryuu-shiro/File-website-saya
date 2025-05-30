@@ -47,21 +47,20 @@
     </div>
 
     <!-- Instagram -->
-<div class="instagram">
-	<h2>INSTAGRAM: <a href="https://www.instagram.com/ryuu_shiro0?igsh=MWpnN29taXAzZm14bA==" target="_blank" class="ig-link"<p>👉🏻ティオ👈🏻</a></h2>
-</div>
+    <div class="instagram">
+      <h2>INSTAGRAM: <a href="https://www.instagram.com/ryuu_shiro0?igsh=MWpnN29taXAzZm14bA==" target="_blank" class="ig-link"><p>👉🏻ティオ👈🏻</p></a></h2>
+    </div>
 
-<!-- Sherlock Holmes -->
-<div class="holmes">
-	<div class="holmes-wrapper">
-		<img src="sherlock.png" alt="Sherlock Holmes">
-		<div class="holmes-quote-overlay">
-			<p>"When you have eliminated the impossible,<br>whatever remains, however improbable,<br>must be the truth."</p>
-			<strong>~ SHERLOCK HOLMES</strong>
-		</div>
-	</div>
-</div>
-  
+    <!-- Sherlock Holmes -->
+    <div class="holmes">
+      <div class="holmes-wrapper">
+        <img src="sherlock.png" alt="Sherlock Holmes">
+        <div class="holmes-quote-overlay">
+          <p>"When you have eliminated the impossible,<br>whatever remains, however improbable,<br>must be the truth."</p>
+          <strong>~ SHERLOCK HOLMES</strong>
+        </div>
+      </div>
+    </div>
 
     <!-- Disqus Section -->
     <div id="disqus-container">
@@ -93,61 +92,60 @@
     <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
 
-</body>
-</html>
+  <!-- Salju canvas -->
+  <canvas id="snowCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById("snowCanvas");
+    const ctx = canvas.getContext("2d");
 
-<canvas id="snowCanvas"></canvas>
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-<script>
-  const canvas = document.getElementById("snowCanvas");
-  const ctx = canvas.getContext("2d");
+    const snowflakes = [];
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const snowflakes = [];
-
-  function createSnowflake() {
-    return {
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 4 + 1,
-      speed: Math.random() * 1 + 0.5,
-    };
-  }
-
-  for (let i = 0; i < 100; i++) {
-    snowflakes.push(createSnowflake());
-  }
-
-  function drawSnowflakes() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "white";
-    ctx.beginPath();
-
-    for (let flake of snowflakes) {
-      ctx.moveTo(flake.x, flake.y);
-      ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+    function createSnowflake() {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 4 + 1,
+        speed: Math.random() * 1 + 0.5,
+      };
     }
 
-    ctx.fill();
-    updateSnowflakes();
-  }
+    for (let i = 0; i < 100; i++) {
+      snowflakes.push(createSnowflake());
+    }
 
-  function updateSnowflakes() {
-    for (let flake of snowflakes) {
-      flake.y += flake.speed;
-      if (flake.y > canvas.height) {
-        flake.y = 0;
-        flake.x = Math.random() * canvas.width;
+    function drawSnowflakes() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      ctx.beginPath();
+
+      for (let flake of snowflakes) {
+        ctx.moveTo(flake.x, flake.y);
+        ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+      }
+
+      ctx.fill();
+      updateSnowflakes();
+    }
+
+    function updateSnowflakes() {
+      for (let flake of snowflakes) {
+        flake.y += flake.speed;
+        if (flake.y > canvas.height) {
+          flake.y = 0;
+          flake.x = Math.random() * canvas.width;
+        }
       }
     }
-  }
 
-  function animate() {
-    drawSnowflakes();
-    requestAnimationFrame(animate);
-  }
+    function animate() {
+      drawSnowflakes();
+      requestAnimationFrame(animate);
+    }
 
-  animate();
-		</script>
+    animate();
+  </script>
+</body>
+</html>
