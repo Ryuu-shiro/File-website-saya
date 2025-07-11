@@ -1,4 +1,13 @@
 body {
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
   font-family: 'Roboto Serif', serif;
   color: white;
   background: url('background.jpg') no-repeat center center fixed;
@@ -9,7 +18,7 @@ body {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   min-height: 100vh;
   width: 100%;
   padding: 60px 20px;
@@ -106,6 +115,7 @@ h2 {
 
 .holmes-wrapper {
   position: relative;
+  right: 5%;
   display: inline-block;
 }
 
@@ -127,13 +137,13 @@ h2 {
   pointer-events: none; /* supaya klik tetap diteruskan */
 }
 
-#cusdis_thread {
+#disqus-container {
   margin: 40px auto;
   max-width: 600px;
-  padding: 20px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  color: white;
+  text-align: center;
 }
 
 #snowCanvas {
@@ -144,4 +154,17 @@ h2 {
   width: 100%;
   height: 100%;
   z-index: 9999;
+}
+.overlay {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.album,
+.profile,
+.novel,
+.instagram,
+.holmes {
+  max-width: 100%;
+  overflow-x: hidden;
 }
